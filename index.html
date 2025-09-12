@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audio Visualizer UI</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Top Row -->
+    <div class="top-row">
+      <div class="top-left">Top Left</div>
+
+      <!-- Top Middle with layered canvases -->
+      <div class="top-middle">
+        <div class="canvas-wrapper">
+          <canvas id="ui-canvas"></canvas>
+          <canvas id="viz-canvas"></canvas>
+          <canvas id="overlay-canvas"></canvas> <!-- 👈 NEW canvas -->
+        </div>
+      </div>
+
+      <div class="top-right">
+        <h3>Degrees &amp; Minors</h3>
+        <ul>
+          <li>
+            B.S. Biology<br />
+            <span class="minor">Minor: Chemistry</span>
+          </li>
+          <li>
+            B.S. Electrical and Computer Engineering<br />
+            <span class="minor">Minor: Computer Science</span>
+            <ul>
+              <li>Computer Engineering Track</li>
+              <li>Electrical Engineering Track</li>
+            </ul>
+          </li>
+          <li>
+            B.S. Physics<br />
+            <span class="minor">Minor: Mathematics</span>
+          </li>
+          <li>
+            M.S. in Data Science<br />
+            <span class="sub-note">May 2025 – Current</span><br />
+            <span class="sub-note">GPA: 4.0</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Banner Section -->
+    <div class="banner">
+      <label for="audio-select">Choose Sound:</label>
+      <select id="audio-select">
+        <option value="assets\audio\go_to_cv.wav">Go To C-V</option>
+        <option value="assets\audio\go_to_project1.wav">Go To project 1</option>
+        <option value="assets\audio\go_to_project2.wav">Go To project 2</option>
+        <option value="assets\audio\go_to_project3.wav">Go To project 3</option>
+        <option value="assets\audio\go_to_project4.wav">Go To project 4</option>
+        <option value="assets\audio\welcome.wav">Welcome</option>                
+        <!-- Add more as needed -->
+      </select>
+
+      <button id="play-button">Play</button>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/app.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+.top-left,
+.top-right {
+  border: 1px solid gold;
+  border-radius: 8px;
+}
+
+/* Full-width top row */
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  margin: 5px;
+  width: calc(100% - 10px);
+  gap: 5px;
+}
+
+/* Top-left with background image */
+.top-left {
+  width: 33%;
+  padding: 10px;
+  background-color: #1e1e1e;
+  background-image: url('../assets/images/N_image.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 5px;
+  height: 300px;
+}
+
+/* Canvas container */
+.top-middle {
+  position: relative;
+  width: 33%;
+  height: 300px;
+  background-color: #222;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.canvas-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Add z-index and pointer-events fixes for proper layering and interaction */
+.canvas-wrapper canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* allows clicks to pass through canvas */
+}
+
+/* Specific z-index layering for canvases */
+#ui-canvas {
+  z-index: 5;
+}
+
+#viz-canvas {
+  z-index: 10;
+}
+
+/* Degrees list */
+.top-right {
+  width: 33%;
+  height: 300px;
+  padding: 10px;
+  background-color: #1e1e1e;
+  border-radius: 5px;
+  overflow-y: auto;
+  text-align: left;
+}
+
+.top-right h3 {
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #444;
+  padding-bottom: 6px;
+}
+
+.top-right ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.top-right ul ul {
+  list-style-type: circle;
+  padding-left: 20px;
+  margin-top: 6px;
+}
+
+.top-right li {
+  margin-bottom: 8px;
+}
+
+/* Main layout container (centered below top row) */
+.container {
+  width: 100%;
+  max-width: 1600px; /* increase from 1200px */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Banner */
+.banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #333;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+/* Form controls */
+#audio-select {
+  padding: 6px;
+  font-size: 1rem;
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  border: 1px solid #555;
+  border-radius: 4px;
+}
+
+#play-button {
+  padding: 6px 12px;
+  font-size: 1rem;
+  background-color: #007acc;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#play-button:hover {
+  background-color: #005fa3;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .top-row {
+    flex-direction: column;
+    height: auto;
+    padding: 5px;
+  }
+
+  .top-left,
+  .top-middle,
+  .top-right {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .top-right {
+    margin-bottom: 0;
+  }
+}
+
+.minor {
+  display: block;
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-top: 2px;
+}
+
+.sub-note {
+  display: block;
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 2px;
+}

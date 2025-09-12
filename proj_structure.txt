@@ -1,0 +1,20 @@
+/project-root
+│
+├── index.html
+│
+├── /css
+│   └── styles.css                # Layout and visual styles
+│
+├── /js
+│   ├── app.js                    # Entry point: init UI, load modules
+│   ├── audioController.js        # Load, decode, play audio; Web Audio API logic
+│   ├── visualizer.js             # Extract FFT/waveform data and render overlay
+│   └── uiAnimator.js             # Core animation logic for the animated UI/UX
+│
+├── /assets
+│   ├── /audio                    # .wav files
+│   │    ├── sound1.wav
+│   │    └── sound2.wav
+│   └── /images                   # (optional) UI/UX graphics or backgrounds
+│
+└── README.md
