@@ -1,4 +1,5 @@
 // File: uiAnimator.js
+// Create the ellipses..
 let uiCanvas, uiCtx;
 let tick = 0;
 
@@ -43,11 +44,11 @@ export function startUIAnimation() {
     uiCtx.translate(w / 2, h / 2); // Move origin to center
 
     const ellipseCount = 3;
-const baseRadiusX = w * 0.6; // 70% of canvas width
-const baseRadiusY = h * 0.4; // 40% of canvas height
+    const baseRadiusX = w * 0.6; // 70% of canvas width
+    const baseRadiusY = h * 0.4; // 40% of canvas height
 
     for (let i = 0; i < ellipseCount; i++) {
-      const rotationSpeeds = [0.02, 0.01, 0.005]; // outer → inner (i = 0 → 2)
+      const rotationSpeeds = [0.02, 0.01, 0.5]; // outer → inner (i = 0 → 2)
       const rotation = tick * rotationSpeeds[i] * (i % 2 === 0 ? 1 : -1);
 
       uiCtx.save();

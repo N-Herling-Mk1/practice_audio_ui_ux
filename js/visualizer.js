@@ -40,7 +40,6 @@ export function startVisualizer() {
 
     vizCtx.lineWidth = 2;
 
-    // Draw waveform with color changes depending on amplitude/frequency band
     vizCtx.beginPath();
 
     for (let i = 0; i < bufferLength; i++) {
@@ -48,16 +47,18 @@ export function startVisualizer() {
       const y = v * height / 2;
 
       // Choose color based on amplitude or index (frequency band proxy)
-      // Example: map frequency bands roughly
-      // Lower indices = lower freq, higher = higher freq (approx)
       let color;
       if (i < bufferLength * 0.33) {
         color = `rgba(255, 100, 100, 0.8)`;  // Red for low freq band
       } else if (i < bufferLength * 0.66) {
         color = `rgba(100, 255, 100, 0.8)`;  // Green for mid freq band
       } else {
-        color = `rgba(100, 100, 255, 0.8)`;  // Blue for high freq band
+        color = `rgba(100, 255, 100, 0.8)`;  // Blue for high freq band
       }
+
+      // Set glow for the current stroke
+      vizCtx.shadowColor = color;
+      vizCtx.shadowBlur = 20;
 
       vizCtx.strokeStyle = color;
 
@@ -68,6 +69,9 @@ export function startVisualizer() {
       }
     }
     vizCtx.stroke();
+
+    // Reset shadowBlur after drawing
+    vizCtx.shadowBlur = 0;
   }
 
   draw();
