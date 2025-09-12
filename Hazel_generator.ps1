@@ -11,11 +11,11 @@ New-Item -ItemType Directory -Path $OutputFolder -Force | Out-Null
 # Define filenames as keys and phrases as values
 $Phrases = @{
     "01_Welcome.wav" = "...  Welcome to Nathan's Home page."
-    "02_Load_CV.wav" = "... luh-Load CV"
-    "03_Project1.wav" = "... luh-Load project 1. Senior Design"
-    "04_Project2.wav" = "... luh-Load project 2. CNN image analysis"
-    "05_Project3.wav" = "... luh-Load project 3. Frequency Time Heat Map Audio Player."
-    "06_Project4.wav" = "... luh-Load project 4. Rubix Cube Two-by-Two solver."
+    "02_Load_CV.wav" = "... Load CV"
+    "03_Project1.wav" = "... Load project 1. Senior Design"
+    "04_Project2.wav" = "... Load project 2. CNN image analysis"
+    "05_Project3.wav" = "... Load project 3. Frequency Time Heat Map Audio Player."
+    "06_Project4.wav" = "... Load project 4. Rubix Cube Two-by-Two solver."
 }
 
 function Add-SilenceToStart {
